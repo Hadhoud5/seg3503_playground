@@ -8,3 +8,4 @@
 | TA | James Url, jamesurl@uottawa.caa |
 | Team | Andrew Forward 1484511<br>Ayana Forward 9021000 |
 
+* [Lab01](lab01)
