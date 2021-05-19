@@ -2,7 +2,7 @@
 
 | Outline | Value |
 | --- | --- |
-| Course | SEG 3103 |
+| Course | SEG 3503 |
 | Date | Summer 2021 |
 | Professor | Andrew Forward, aforward@uottawa.ca |
 | TA | James Url, jamesurl@uottawa.caa |
