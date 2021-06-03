@@ -149,4 +149,121 @@ class DateTest {
     );
   }
 
-}
+
+  //test added to achieve 100% condition for when day>31
+  @Test
+  void nextDate_invalid_tc21() {
+    assertThrows(
+      IllegalArgumentException.class,
+      () -> new Date(1975, 6, 32)
+    );
+  }
+  //
+  //test for when day>30 and isthirtyDayMonth()==true
+   @Test
+  void nextDate_invalid_tc22() {
+    assertThrows(
+      IllegalArgumentException.class,
+      () -> new Date(1975, 9, 31)
+    );
+  }
+ 
+ //test for when month==2 and isLeapYear()==true and day>29
+   @Test
+  void nextDate_invalid_tc23() {
+    assertThrows(
+      IllegalArgumentException.class,
+      () -> new Date(2000, 2, 30)
+    );
+  }
+
+//test for when month has a negative value
+  @Test
+  void nextDate_invalid_tc24() {
+    assertThrows(
+      IllegalArgumentException.class,
+      () -> new Date(2000, -1, 10)
+    );
+  }
+
+
+//test for when month>12
+  @Test
+  void nextDate_invalid_tc25() {
+    assertThrows(
+      IllegalArgumentException.class,
+      () -> new Date(2000, 13, 10)
+    );
+  }
+
+
+//test for when year is divisible by 400
+    @Test
+  void nextDate_tc26() {
+    Date today = new Date(1600, 1, 1);
+    Date expectedTomorrow = new Date(1600, 1, 2);
+    assertEquals(expectedTomorrow, today.nextDate());
+  }
+ 
+
+
+  //test for the isEndMonth() method for when the year is a leap year and day==31
+
+    @Test
+  void nextDate_tc27() {
+    Date today = new Date(2000, 1, 31);
+    Date expectedTomorrow = new Date(2000, 2, 1);
+    assertEquals(expectedTomorrow, today.nextDate());
+  }
+
+  //test for the isEndMonth() method for when the year is a leap year and day==30 and its a 30 day month
+
+    @Test
+  void nextDate_tc28() {
+    Date today = new Date(2000, 9, 30);
+    Date expectedTomorrow = new Date(2000, 10, 1);
+    assertEquals(expectedTomorrow, today.nextDate());
+  }
+
+  //testing the toString method
+   @Test
+  void nextDate_tc29() {
+    Date today = new Date(2000, 9, 30);
+    String expectedDate =  "2000/September/30";
+    assertEquals(expectedDate, today.toString());
+  }
+
+  //testing the isEndOfMonth method
+  @Test
+  void nextDate_tc30() {
+    Date today = new Date(2000, 2, 29);
+    Date expectedTomorrow = new Date(2000, 3, 1);
+    assertEquals(expectedTomorrow, today.nextDate());
+  }
+   //testing the isEndOfMonth method
+  @Test
+  void nextDate_tc31() {
+    Date today = new Date(2001, 2, 28);
+    Date expectedTomorrow = new Date(2001, 3, 1);
+    assertEquals(expectedTomorrow, today.nextDate());
+  }
+
+
+//testing the .equals method when both objects are not of type Date
+
+   @Test
+  void nextDate_tc32() {
+    Date today = new Date(2001, 2, 28);
+    String expectedDay = "2001/February/28";
+    assertEquals(expectedDay.equals(today),false);
+  }
+
+//testing the .equals method when both objects are of type Date
+
+   @Test
+  void nextDate_tc33() {
+    Date today = new Date(2001, 2, 28);
+    Date expectedDay = new Date(2001, 2, 28);
+    assertEquals(expectedDay.equals(today),true);
+  }
+} 
