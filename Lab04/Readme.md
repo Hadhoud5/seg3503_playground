@@ -55,5 +55,14 @@ Apres la finalisation des tests qui marchent, j'ai créer un constructeur pour d
 un tableau 3X3 vide.
 "EmptyBoard" method s'est transformé en toString() et j'ai ajouté deux méthodes (size et showPositions). Les tests ajoutés ensuite sont tous fonctionnels 
 
+<br />
+<br />
+
+Voici l'ensemble des commits ainsi qu'un code couleur pour "Pass, Fail, Refractoring"
+<br />
+<br />
+
+![Image 10-06-2021 à 22 25](https://user-images.githubusercontent.com/55165009/121599975-b85e4880-ca3b-11eb-994a-f395a2625480.JPG)
+
 
 
