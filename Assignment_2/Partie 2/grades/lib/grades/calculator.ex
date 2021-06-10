@@ -42,20 +42,11 @@ defmodule Grades.Calculator do
   end
 
   def numeric_grade(%{homework: homework, labs: labs, midterm: midterm, final: final}) do
-    avg_homework =
-      if Enum.count(homework) == 0 do
-        0
-      else
-        Enum.sum(homework) / Enum.count(homework)
-      end
+    avg_homework = avg(homework)
+     
 
-    avg_labs =
-      if Enum.count(labs) == 0 do
-        0
-      else
-        Enum.sum(labs) / Enum.count(labs)
-      end
-
+    avg_labs = avg(labs)
+      
     avg_exams = (midterm + final) / 2
 
     num_labs =
