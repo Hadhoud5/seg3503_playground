@@ -23,19 +23,7 @@ defmodule Grades.Calculator do
     else
       mark = calculate_grade(avg_labs, avg_homework, midterm, final)
 
-      cond do
-        mark > 0.895 -> "A+"
-        mark > 0.845 -> "A"
-        mark > 0.795 -> "A-"
-        mark > 0.745 -> "B+"
-        mark > 0.695 -> "B"
-        mark > 0.645 -> "C+"
-        mark > 0.595 -> "C"
-        mark > 0.545 -> "D+"
-        mark > 0.495 -> "D"
-        mark > 0.395 -> "E"
-        :else -> "F"
-      end
+     calculate_grade(false, mark)
     end
   end
 
@@ -54,19 +42,7 @@ defmodule Grades.Calculator do
     else
       mark = calculate_grade(avg_labs, avg_homework, midterm, final)
 
-      cond do
-        mark > 0.895 -> 10
-        mark > 0.845 -> 9
-        mark > 0.795 -> 8
-        mark > 0.745 -> 7
-        mark > 0.695 -> 6
-        mark > 0.645 -> 5
-        mark > 0.595 -> 4
-        mark > 0.545 -> 3
-        mark > 0.495 -> 2
-        mark > 0.395 -> 1
-        :else -> 0
-      end
+      calculate_grade(true, mark)
     end
   end
 end
@@ -98,6 +74,37 @@ end
 @doc """ La méthode "calculate_grade" retourne la note de l'étudiant """
 
 
+def calculate_grade(isNumeric, mark) do
+    if isNumeric == true do
+      cond do
+        mark > 0.895 -> 10
+        mark > 0.845 -> 9
+        mark > 0.795 -> 8
+        mark > 0.745 -> 7
+        mark > 0.695 -> 6
+        mark > 0.645 -> 5
+        mark > 0.595 -> 4
+        mark > 0.545 -> 3
+        mark > 0.495 -> 2
+        mark > 0.395 -> 1
+        :else -> 0
+      end
+    else
+      cond do
+        mark > 0.895 -> "A+"
+        mark > 0.845 -> "A"
+        mark > 0.795 -> "A-"
+        mark > 0.745 -> "B+"
+        mark > 0.695 -> "B"
+        mark > 0.645 -> "C+"
+        mark > 0.595 -> "C"
+        mark > 0.545 -> "D+"
+        mark > 0.495 -> "D"
+        mark > 0.395 -> "E"
+        :else -> "F"
+      end
+    end
+  end
 
 
   def calculate_grade(avg_labs, avg_homework, midterm, final) do
