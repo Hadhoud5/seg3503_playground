@@ -50,9 +50,44 @@ void test_toString_nx1() {
   }
 
   @Test
-  void test_sizeDefault() {
+    void test_size_default() {
+    Tic t = new Tic();
+    assertEquals(9, t.size());
+  }
 
+  @Test
+  void test_size_1xn() {
+    Tic t1 = new Tic(1,2);
+    Tic t2 = new Tic(1,3);
+    Tic t3 = new Tic(1,7);
+    assertEquals(2, t1.size());
+    assertEquals(3, t2.size());
+    assertEquals(7, t3.size());
+  }
+
+  @Test
+  void test_size_nx1() {
+    Tic t1 = new Tic(2,1);
+    Tic t2 = new Tic(3,1);
+    Tic t3 = new Tic(7,1);
+    assertEquals(2, t1.size());
+    assertEquals(3, t2.size());
+    assertEquals(7, t3.size());
+  }
+
+  @Test
+  void test_size_nxm() {
+    Tic t1 = new Tic(3,4);
+    Tic t2 = new Tic(5,6);
+    assertEquals(12, t1.size());
+    assertEquals(30, t2.size());
   }
 }
+
+  @Test
+  void test_showPositions() {
+    Tic t = new Tic(3,4);
+    String e = "0|1|2|3\n4|5|6|7\n8|9|10|11";
+    assertEquals(e,t.showPositions());
   }
 }
