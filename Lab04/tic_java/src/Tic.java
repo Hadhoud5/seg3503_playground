@@ -8,13 +8,13 @@ public class Tic {
         if (j == 0) {
           board += "_";
         } else {
-          board += "|_";
+                board += "|_";
         }
       }
       board += "\n";
+      if (i > 0) {
+        board += "\n";
+      }
     }
     return board;
   }
-
-
-}
