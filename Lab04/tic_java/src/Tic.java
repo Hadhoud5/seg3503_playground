@@ -8,11 +8,10 @@ public class Tic {
         if (j == 0) {
           board += "_";
         } else {
-                board += "|_";
+                 board += "|_";
         }
       }
-      board += "\n";
-      if (i > 0) {
+      if (rows > 1 && i != rows - 1) {
         board += "\n";
       }
     }
