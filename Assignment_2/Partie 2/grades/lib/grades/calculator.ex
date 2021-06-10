@@ -1,18 +1,8 @@
 defmodule Grades.Calculator do
   def percentage_grade(%{homework: homework, labs: labs, midterm: midterm, final: final}) do
-    avg_homework =
-      if Enum.count(homework) == 0 do
-        0
-      else
-        Enum.sum(homework) / Enum.count(homework)
-      end
+    avg_homework = avg(homework)
 
-    avg_labs =
-      if Enum.count(labs) == 0 do
-        0
-      else
-        Enum.sum(labs) / Enum.count(labs)
-      end
+    avg_labs = avg(labs)
 
     mark = 0.2 * avg_labs + 0.3 * avg_homework + 0.2 * midterm + 0.3 * final
     round(mark * 100)
@@ -101,6 +91,18 @@ defmodule Grades.Calculator do
         mark > 0.395 -> 1
         :else -> 0
       end
+    end
+  end
+end
+
+""" La méthode avg calcule et retourne la moyenne pour une entrée 
+"""
+
+def avg(data) do
+    if Enum.count(data) == 0 do
+      0
+    else
+      Enum.sum(data) / Enum.count(data)
     end
   end
 end
