@@ -13,6 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -76,7 +77,31 @@ class ExampleSeleniumTest {
     assertEquals(expected, getWords(actual)[0]);
   }
 
+  @Test
+  public void testAdminLoginWithCorrectParameters() {
+    String url = "http://localhost:8080/admin";
+    String username = "admin";
+    String password = "password";
+
+    login(url, username, password);
+
+    assertEquals(url, driver.getCurrentUrl());
+  }
+
   private String[] getWords(String s) {
     return s.split("\\s+");
+  }
+
+  //Helper methods
+  private void login(String url, String usernameInput, String passwordInput) {
+    
+    driver.get(url);
+    WebElement usernameInputField = driver.findElement(By.id("loginId"));
+    WebElement passwordInputField = driver.findElement(By.id("loginPasswd"));
+    WebElement loginButton = driver.findElement(By.id("loginBtn"));
+
+    usernameInputField.sendKeys(usernameInput);
+    passwordInputField.sendKeys(passwordInput);
+    loginButton.click();
   }
 }
