@@ -105,3 +105,4 @@ class ExampleSeleniumTest {
     loginButton.click();
   }
 }
+ 
