@@ -24,7 +24,8 @@ Here is a screenshot of the terminal after compiling:
 
 
 Then we ran `mvn package -DskipTests` which will compile all of the tests without actually running them.
-<img width="807" alt="Capture d’écran 2021-07-21 à 00 17 43" src="https://user-images.githubusercontent.com/55165009/126407517-e130dc44-2fba-484f-9889-2bcdfd661275.png">
+<img width="807" alt="Capture d’écran 2021-07-21 à 00 17 43" src="https://user-images.githubusercontent.com/55165009/126407921-6d2b06c1-edd5-4c20-8ca9-acc5ab8aa87f.png">
+
 <img width="799" alt="Capture d’écran 2021-07-21 à 00 21 34" src="https://user-images.githubusercontent.com/55165009/126407533-8b66b18d-b7f3-4df7-8267-bc6509a5c1b6.png">
 
 
@@ -61,4 +62,5 @@ Here is the code for the added test where we check that the username "admin" and
 ```
 
 Here is a screenshot of the four tests passing:
-![Uploading Capture d’écran 2021-07-21 à 00.22.27.png…]()
+<img width="799" alt="Capture d’écran 2021-07-21 à 00 22 27" src="https://user-images.githubusercontent.com/55165009/126407656-64ebf526-9b92-45e7-a7b0-48120381ecf2.png">
+
